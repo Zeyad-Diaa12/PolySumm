@@ -56,7 +56,7 @@ A short demonstration of the PolySumm system in action is available below:
 
 [//]: # (Placeholder for demo video)
 
-<video src="PolySumm - Demo.mp4" controls title="PolySumm Demo"></video>
+<video src="PolySumm-Demo.mp4" controls title="PolySumm Demo"></video>
 
 ## License
 
