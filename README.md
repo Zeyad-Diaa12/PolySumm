@@ -58,8 +58,4 @@ A short demonstration of the PolySumm system in action is available below:
 
 <video src="PolySumm-Demo.mp4" controls title="PolySumm Demo"></video>
 
-## License
-
-This project is licensed under the [License Name] - see the `LICENSE.md` file for details.
-
 
