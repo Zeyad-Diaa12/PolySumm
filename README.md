@@ -50,13 +50,55 @@ The project successfully delivered an effective multimodal scientific paper summ
 *   **Backend/Framework:** Retrieval-Augmented Generation (RAG)
 *   **Optional Integration:** Azure OpenAI
 
+
 ## Demo Video
 
 A short demonstration of the PolySumm system in action is available below:
 
 [//]: # (Placeholder for demo video)
+https://github.com/user-attachments/assets/8098c249-1a95-4532-862e-afe58dbcb282
 
+### Detailed Methodology
 
-https://github.com/user-attachments/assets/dfed938c-d541-4712-af6a-801c91f7684a
+#### Data Extraction and Preprocessing
+Our system leverages **PaddleOCR** for robust multimodal data extraction from scientific PDFs. This involves:
+*   **PDF Processing:** Handling various PDF structures and layouts.
+*   **Layout Analysis:** Identifying different content blocks such as text paragraphs, figures, and tables.
+*   **Text Recognition:** Accurately extracting text from all identified blocks.
+*   **Table and Figure Extraction:** Specifically recognizing and extracting structured data from tables and visual information from figures.
+The extracted data is then converted into a structured JSON format, which serves as the input for the subsequent processing steps. This structured data undergoes a crucial preprocessing phase, including **semantic chunking** to break down content into meaningful units and **embedding generation** to create vector representations for efficient retrieval within the RAG pipeline.
+
+#### Summarization Modules
+PolySumm integrates several specialized summarization modules, each tailored to a specific data modality:
+*   **Figure Summarization:** Utilizes **Vision-Language Models (VLMs)** to generate descriptive summaries of figures, capturing key visual information and its relevance to the paper's content.
+*   **Table Summarization:** Employs **Table-to-Text Models** to convert structured tabular data into coherent natural language summaries, highlighting important trends, comparisons, or findings within the tables.
+*   **Text Summarization:** Relies on **transformer-based models**, such as **PEGASUS**, for generating abstractive summaries of textual content, ensuring conciseness and information retention.
+*   **Topic Classification Model:** An integrated model helps in classifying the topic of the paper, which can further refine the summarization process by focusing on domain-specific aspects.
+
+#### RAG System Core
+The Retrieval-Augmented Generation (RAG) framework is central to PolySumm's ability to produce comprehensive and contextually relevant summaries. The RAG integration involves:
+*   **Retrieval Strategy:** Based on user queries or the context of the document, relevant chunks of multimodal data (text, figure descriptions, table summaries) are retrieved from the processed document embeddings.
+*   **Generation Process:** The retrieved information is then fed into a powerful language model, which generates the final summary, ensuring that it is grounded in the original document's content.
+*   **Combining Multimodal Summaries:** A sophisticated mechanism combines the summaries generated from different modalities into a single, cohesive, and informative overall summary.
+
+### Comparative Analysis: Custom vs. API-Based RAG Systems
+During development, two distinct RAG pipelines were implemented and rigorously evaluated:
+1.  **Custom-Built System:** This system utilizes in-house developed or fine-tuned summarization models for each modality. It demonstrated superior performance in terms of accuracy, deeper integration of figures and tables, faster inference times, and lower resource consumption. This approach proved ideal for achieving domain-specific accuracy and detailed multimodal understanding.
+2.  **API-Based System (Azure OpenAI):** This system leveraged external APIs, specifically Azure OpenAI, for its summarization capabilities. While offering fluent generation and quick setup, it exhibited limitations in deep multimodal understanding and integration compared to the custom solution.
+
+The comprehensive evaluation confirmed that the custom RAG pipeline significantly outperformed the API-based counterpart in accuracy, efficiency, and content completeness, underscoring the benefits of a tailored, modality-aware approach for scientific paper summarization.
+
+## Future Work
+
+Potential future enhancements for PolySumm include:
+*   Exploring more advanced multimodal fusion techniques.
+*   Expanding support for additional document formats and content types.
+*   Developing interactive summarization features.
+*   Further optimization for real-time processing and deployment in various environments.
+*   Investigating techniques to improve OCR accuracy, particularly for complex tables, formulas, and diverse layouts, or incorporating methods to handle OCR uncertainty downstream.
+*   Extending the system to take multiple related papers as input and produce a coherent, unified summary that highlights cross-paper themes, differences, and aggregated findings—useful for survey articles or literature reviews.
+*   Adapting OCR and summarization pipelines to process papers in languages other than English, including cross-lingual summarization.
+*   Incorporating user profiles or feedback loops to tailor summaries to individual reading styles, preferred level of technical detail, or specific interests (e.g., methodology vs. results).
+*   Setting up an online learning framework where user corrections or validations feed back into model fine-tuning, gradually improving performance over time. 
 
 
