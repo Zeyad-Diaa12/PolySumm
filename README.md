@@ -13,6 +13,13 @@ This project aimed to develop a comprehensive multimodal summarization system fo
 3.  **Integrating Components within a RAG Framework:** To leverage Retrieval-Augmented Generation for enhanced summarization.
 4.  **Providing an Accessible User Interface:** To enable researchers to easily utilize this technology.
 
+## Demo Video
+
+A short demonstration of the PolySumm system in action is available below:
+
+[//]: # (Placeholder for demo video)
+https://github.com/user-attachments/assets/8098c249-1a95-4532-862e-afe58dbcb282
+
 ### Methodology
 PolySumm employs a sophisticated system architecture that combines advanced OCR capabilities with specialized summarization models within a Retrieval-Augmented Generation (RAG) framework. The core methodology involves:
 
@@ -49,14 +56,6 @@ The project successfully delivered an effective multimodal scientific paper summ
 *   **Natural Language Processing (NLP):** Transformer-based models (for text summarization), Vision-Language Models (for figure summarization), Table-to-Text Models (for table summarization)
 *   **Backend/Framework:** Retrieval-Augmented Generation (RAG)
 *   **Optional Integration:** Azure OpenAI
-
-
-## Demo Video
-
-A short demonstration of the PolySumm system in action is available below:
-
-[//]: # (Placeholder for demo video)
-https://github.com/user-attachments/assets/8098c249-1a95-4532-862e-afe58dbcb282
 
 ### Detailed Methodology
 
