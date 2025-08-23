@@ -1,0 +1,32 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Git
+.git
+.gitignore
+
+# VS Code
+.vscode/
+
+# Zip files
+*.zip
+
+# Ignore the model archive, we'll use the extracted version
+merged_model_final.zip
