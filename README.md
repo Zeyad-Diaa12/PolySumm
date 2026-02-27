@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/8098c249-1a95-4532-862e-afe58dbcb282
 ### Methodology
 PolySumm employs a sophisticated system architecture that combines advanced OCR capabilities with specialized summarization models within a Retrieval-Augmented Generation (RAG) framework. The core methodology involves:
 
-*   **Multimodal Data Extraction:** Utilizing PaddleOCR to process scientific PDFs, extracting text, identifying figures, and recognizing table structures. The extracted data is then outputted in a structured JSON format.
+*   **Multimodal Data Extraction:** Utilizing PaddleOCR to process scientific PDFs, extracting text, identifying figures, and recognizing table structures. The extracted data is then output in a structured JSON format.
 *   **Data Preprocessing:** The structured JSON data undergoes rigorous preprocessing, including semantic chunking and embedding generation, before being fed into the RAG pipeline.
 *   **Distinct Summarization Approaches:** The system employs different summarization techniques tailored to each content type:
     *   **Text Summarization:** Achieved using transformer-based models.
